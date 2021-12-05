@@ -9,11 +9,11 @@ if (isset($_POST['form_loker'])) {
     $nama_loker = $_POST['nama_loker'];
     $kapasitas_loker = $_POST['kapasitas_loker'];
 
-    if ($tipe == 'tambah_loker') {
-        $model->insertLoker($nama_loker, $kapasitas_loker);
-    } else {
+    if ($tipe == 'edit_loker') {
         $id_loker = $_POST['id_loker'];
         $model->updateLoker($id_loker, $nama_loker, $kapasitas_loker);
+    } else {
+        $model->insertLoker($nama_loker, $kapasitas_loker);
     }
 }
 

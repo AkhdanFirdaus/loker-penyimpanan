@@ -27,14 +27,14 @@ class LokerModel
     function insertLoker($nama, $kapasitas)
     {
         $connection = $this->db->connectMysql();
-        $query = "INSERT INTO loker (nama_loker, kapasitas_loker) VALUES ('$nama', '$kapasitas')";
+        $query = "INSERT INTO loker (nama_loker, kapasitas_loker) VALUES ('$nama', $kapasitas)";
         $hasil = mysqli_query($connection, $query);
         if ($hasil) {
             $message = "Berhasil menyimpan loker";
-            echo "<meta http-equiv='refresh' content='0; url=" . $_SERVER['PHP_SELF'] . '&message=' . $message .  "'>";
+            echo "<meta http-equiv='refresh' content='0; url=" . $_SERVER['PHP_SELF'] . '?message=' . $message .  "'>";
         } else {
             $message = "Gagal menambahkan loker";
-            echo "<meta http-equiv='refresh' content='0; url=" . $_SERVER['PHP_SELF'] . '&errormessage=' . $message .  "'>";
+            echo "<meta http-equiv='refresh' content='0; url=" . $_SERVER['PHP_SELF'] . '?errormessage=' . $message .  "'>";
         }
     }
 
